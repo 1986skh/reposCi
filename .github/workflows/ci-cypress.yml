@@ -1,4 +1,5 @@
 name: cypressCI
+
 on:
   push:
     branches: [ main ]
@@ -16,11 +17,10 @@ jobs:
         with:
           node-version: "20.11.1"
 
-      - name: Install dependencies
-        run: npm install
-
-      - name: Set execute permissions for Cypress binary
-        run: chmod +x ./node_modules/.bin/cypress
+      - name: Install Cypress dependencies
+        run: |
+          npm install
+          npx cypress install
 
       - name: Run Cypress tests
         run: npx cypress run
