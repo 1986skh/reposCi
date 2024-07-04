@@ -22,7 +22,7 @@ jobs:
           npm install
           npm i cypress -d
       - name: Run Cypress tests
-        run: npm cypress run
+     run: npm run cypress:run
 
       - name: Upload test results
         uses: actions/upload-artifact@v2
