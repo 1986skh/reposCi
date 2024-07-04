@@ -18,12 +18,14 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-
       - name: Run Cypress tests
         run: npx cypress run
+ - name: Generate test report
+        run: npm run generate:report
 
       - name: Upload test results
         uses: actions/upload-artifact@v2
         with:
           name: cypress-test-report
-          path: cypress/reports/*.html
+          path: cypress/reports/index.html
+    
