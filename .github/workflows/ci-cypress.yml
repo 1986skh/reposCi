@@ -1,28 +1,23 @@
-name:cypressCI
+name: cypressCI
 on:
   push:
     branches: [ main ]
 
 jobs:
   test:
-    # Utilise l'image d'environnement Ubuntu la plus récente
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
-        # Action pour cloner le dépôt github
         uses: actions/checkout@v2
 
       - name: Install Node.js
         uses: actions/setup-node@v2
         with:
-          # Installer Node.js version v20.11.1
-          node-version: "v20.11.1"
+          node-version: "20.11.1"  
 
       - name: Install dependencies
-        # Installer les dépendances du projet
         run: npm install
 
       - name: Run Cypress tests
-        # Exécuter les tests Cypress
         run: npm run cypress:run
