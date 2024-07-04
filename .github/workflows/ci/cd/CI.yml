@@ -1,7 +1,9 @@
 name: Tests Automation
 
 # Déclenche ce workflow à chaque push
-on: [push]
+on:
+  push:
+    branches: [ main ]
 
 jobs:
   test:
@@ -16,8 +18,8 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v2
         with:
-          # Installer Node.js version 20
-          node-version: "20"
+          # Installer Node.js version v20.11.1
+          node-version: "v20.11.1"
 
       - name: Install dependencies
         # Installer les dépendances du projet
