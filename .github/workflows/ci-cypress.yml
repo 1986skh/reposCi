@@ -16,14 +16,16 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "20.11.1"
+          registry-url: https://registry.npmjs.org/
 
-      - name: Install Cypress dependencies
-        run: |
-          npm install
-          npm i cypress -D
+      - name: Install Cypress globally
+        run: npm install -g cypress
+
+      - name: Install project dependencies
+        run: npm ci
 
       - name: Run Cypress tests
-        run: sudo npx cypress run
+        run: npx cypress run
 
       - name: Upload test results
         uses: actions/upload-artifact@v2
