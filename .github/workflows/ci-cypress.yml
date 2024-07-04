@@ -20,9 +20,10 @@ jobs:
       - name: Install Cypress dependencies
         run: |
           npm install
-          npm i cypress -d
+          npm i cypress -D
+
       - name: Run Cypress tests
-     run: npm run cypress:run
+        run: npx cypress run
 
       - name: Upload test results
         uses: actions/upload-artifact@v2
