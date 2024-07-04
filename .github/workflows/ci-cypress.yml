@@ -14,14 +14,15 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: "20.11.1"  
+          node-version: "20.11.1"
 
       - name: Install dependencies
         run: npm install
 
       - name: Run Cypress tests
-        run: npm run cypress:run
-         - name: Upload test results
+        run: npx cypress run
+
+      - name: Upload test results
         uses: actions/upload-artifact@v2
         with:
           name: cypress-test-report
