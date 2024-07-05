@@ -2,11 +2,12 @@
   "name": "quetes2",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {
-    "cy:open": "cypress open",
-    "cypress:run": "cypress run",
-    "generate:report": "marge cypress/reports/*.json --reportDir=cypress/reports --reportFilename=index"
-  },
+"scripts": {
+  "cy:open": "cypress open",
+  "cypress:run": "cypress run",
+  "generate:report": "marge cypress/reports/*.json --reportDir=cypress/reports --reportFilename=index"
+}
+,
   "keywords": [],
   "author": "",
   "license": "ISC",
