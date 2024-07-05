@@ -5,7 +5,7 @@
   "scripts": {
     "cy:open": "cypress open",
     "cypress:run": "cypress run",
-    "generate:report": "mochawesome-merge cypress/reports/*.json > cypress/reports/mochawesome.json && marge cypress/reports/mochawesome.json --reportDir=cypress/reports --reportFilename=index"
+    "generate:report": "mochawesome-merge cypress/reports/*.json > cypress/reports/mochawesome.json && marge cypress/reports/mochawesome.json --reportDir=cypress/reports --reportFilename=index.html"
   },
   "keywords": [],
   "author": "",
