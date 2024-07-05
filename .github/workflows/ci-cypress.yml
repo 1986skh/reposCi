@@ -17,17 +17,14 @@ jobs:
         with:
           node-version: "20.11.1"
 
+      - name: Install Cypress globally
+        run: npm install -g cypress
+
       - name: Install project dependencies
         run: npm ci
 
-      - name: Install mochawesome
-        run: npm install mochawesome mochawesome-merge mochawesome-report-generator
-
       - name: Run Cypress tests
-        run: npx cypress run
-
-      - name: List Cypress reports directory (debugging step)
-        run: ls -la cypress/reports
+        run: npx cypress run --reporter cypress-mochawesome-reporter --reporter-options reportDir=cypress/reports,overwrite=false,html=true,json=true,charts=true
 
       - name: Generate test report
         run: npm run generate:report
@@ -36,4 +33,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: cypress-test-report
-          path: cypress/reports/*.html
+          path: cypress/reports/index.html
