@@ -17,11 +17,11 @@ jobs:
         with:
           node-version: "20.11.1"
 
-      - name: Install Cypress globally
-        run: npm install -g cypress
-
       - name: Install project dependencies
         run: npm ci
+
+      - name: Install mochawesome
+        run: npm install mochawesome mochawesome-merge mochawesome-report-generator
 
       - name: Run Cypress tests
         run: npx cypress run
