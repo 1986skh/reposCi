@@ -5,7 +5,7 @@
   "scripts": {
     "cy:open": "cypress open",
     "cypress:run": "cypress run",
-    "generate:report": "marge cypress/reports/*.json --reportDir=cypress/reports --reportFilename=index"
+    "generate:report": "marge cypress/reports/*.html--reportDir=cypress/reports --reportFilename=index"
   },
   "keywords": [],
   "author": "",
