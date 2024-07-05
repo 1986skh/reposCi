@@ -23,16 +23,12 @@ cy.get('button[data-qa="signup-submit-button"]').click()
   });
 })
 describe('teste de formulaire login', () => {
-  it('passes', () => {
+  it('la connexion a bien passé ', () => {
   cy.visit('https://preprod.backmarket.fr/fr-fr/register')
   cy.get('span._2GvJDBxS').contains('Tout accepter').click()
 cy.get('#signin-email').type('khelifa.smail08@gmail.com')
 cy.get('#signin-password').type('Wild2024')
 cy.get('label[for="newsletter"]').click();
-cy.get('span._2GvJDBxS').contains('Welcome Back!').click()
-
-
-
-
+cy.get('span._2GvJDBxS').contains('Welcome Back!').click();
   });
 })
