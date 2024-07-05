@@ -25,6 +25,8 @@ jobs:
 
       - name: Run Cypress tests
         run: npx cypress run
+        - name: Generate test report
+        run: npm run generate:report
 
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v4
