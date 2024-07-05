@@ -26,6 +26,9 @@ jobs:
       - name: Run Cypress tests
         run: npx cypress run --reporter cypress-mochawesome-reporter --reporter-options reportDir=cypress/reports,overwrite=false,html=true,json=true,charts=true
 
+      - name: List report files
+        run: ls -alh cypress/reports
+
       - name: Generate test report
         run: npm run generate:report
 
